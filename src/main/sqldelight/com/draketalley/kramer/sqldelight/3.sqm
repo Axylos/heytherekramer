@@ -1,0 +1,4 @@
+ALTER TABLE githubUser
+ADD COLUMN userName TEXT;
+ALTER TABLE githubUser
+ADD COLUMN token TEXT NOT NULL DEFAULT 'invalid';

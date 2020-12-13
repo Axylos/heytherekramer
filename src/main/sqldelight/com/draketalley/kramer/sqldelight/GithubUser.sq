@@ -1,0 +1,14 @@
+CREATE TABLE githubUser (
+    id INTEGER PRIMARY KEY,
+    token TEXT NOT NULL DEFAULT '',
+    userName TEXT
+);
+
+select:
+SELECT *
+FROM githubUser;
+
+insert:
+INSERT INTO githubUser
+(token)
+VALUES ?;

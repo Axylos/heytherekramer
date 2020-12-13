@@ -1,0 +1,2 @@
+ALTER TABLE githubUser
+RENAME TO fooby;
