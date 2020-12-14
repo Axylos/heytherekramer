@@ -1,0 +1,37 @@
+CREATE TABLE githubUser (
+    id INTEGER PRIMARY KEY,
+    token TEXT NOT NULL DEFAULT '',
+    userName TEXT
+);
+
+select:
+SELECT *
+FROM githubUser;
+
+insert:
+INSERT INTO githubUser
+(token)
+VALUES ?;
+
+saveToken:
+INSERT INTO githubUser
+(token)
+VALUES (?);
+
+findLast:
+SELECT last_insert_rowid();
+
+hasToken:
+SELECT count(*)
+FROM githubUser;
+
+reset:
+DELETE FROM githubUser;
+
+getToken:
+SELECT token
+FROM githubUser;
+
+storeLogin:
+UPDATE githubUser
+SET userName = ?;

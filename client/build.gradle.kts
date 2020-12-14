@@ -15,9 +15,15 @@ repositories {
     jcenter()
 }
 
+val ktor_version = "1.4.3"
 dependencies {
     implementation("com.squareup.sqldelight:sqlite-driver:1.4.3")
     implementation(compose.desktop.currentOs)
+    implementation("io.ktor:ktor-client-cio:$ktor_version")
+    implementation("io.ktor:ktor-client-gson:$ktor_version")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
+
+
 }
 
 sqldelight {

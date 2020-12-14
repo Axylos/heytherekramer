@@ -13,7 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-fun UserForm() {
+fun UserForm(onSubmit: (String) -> Unit) {
     val tokenField = remember { mutableStateOf("")}
     return Column(Modifier.fillMaxSize(), Arrangement.SpaceAround) {
         Text(
@@ -31,7 +31,7 @@ fun UserForm() {
         )
         Button(
             modifier = Modifier.align(Alignment.CenterHorizontally),
-            onClick = { println(tokenField.value) }) {
+            onClick = { onSubmit(tokenField.value) }) {
             Text(text = "Submit")
         }
     }
