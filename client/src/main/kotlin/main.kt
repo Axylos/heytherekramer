@@ -18,10 +18,14 @@ import models.DbConn
 import models.GithubUserRepo
 import models.Route
 import service.GithubService
+import views.IndexView
 import views.UserForm
+import java.net.URI
+import java.net.URL
 
 fun main(args: Array<String>) = runBlocking {
-    java.awt.Desktop.getDesktop().browse("https://draketalley.com")
+    val url = URI("https://draketalley.com");
+//    java.awt.Desktop.getDesktop().browse(url)
     if (args.any()) {
         if (args.get(0).equals("migrate"))  {
             println("migrate: ${KramerDb.Schema.version}")
@@ -62,7 +66,7 @@ fun App() {
                 GithubService.token = it
                 route.value = Route.Index
             })
-            Route.Index -> Text(text = "Index")
+            Route.Index -> IndexView()
         }
     }
 }
