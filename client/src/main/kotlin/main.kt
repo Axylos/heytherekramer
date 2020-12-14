@@ -21,6 +21,7 @@ import service.GithubService
 import views.UserForm
 
 fun main(args: Array<String>) = runBlocking {
+    java.awt.Desktop.getDesktop().browse("https://draketalley.com")
     if (args.any()) {
         if (args.get(0).equals("migrate"))  {
             println("migrate: ${KramerDb.Schema.version}")
