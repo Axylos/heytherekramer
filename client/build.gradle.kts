@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.jetbrains.compose.compose
 
 group = "com.draketalley"
@@ -22,8 +23,6 @@ dependencies {
     implementation("io.ktor:ktor-client-cio:$ktor_version")
     implementation("io.ktor:ktor-client-gson:$ktor_version")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
-
-
 }
 
 sqldelight {
@@ -39,3 +38,9 @@ compose.desktop {
         mainClass = "MainKt"
     }
 }
+
+// compile bytecode to java 8 (default is java 6)
+tasks.withType<KotlinCompile> {
+    kotlinOptions.jvmTarget = "11"
+}
+

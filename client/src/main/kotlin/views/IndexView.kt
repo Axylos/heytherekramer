@@ -17,7 +17,9 @@ fun IndexView() {
       Button(
               onClick = {
                   runBlocking {
-                      KramerService.getToken()
+                      val token = KramerService.getToken()
+                              .await()
+                      println(token)
                   }
               }
       ) {
